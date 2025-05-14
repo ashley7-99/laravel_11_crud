@@ -39,8 +39,8 @@ class AuthController extends Controller
             // Regenerate the session to prevent session fixation attacks
             $request->session()->regenerate();
 
-            // Redirect the user to the intended URL (typically the dashboard)
-            return redirect()->intended('/dashboard');
+            // ✅ Redirect the user to the products page
+            return redirect()->route('products.index');
         }
 
         // If authentication fails, redirect back with an error message
